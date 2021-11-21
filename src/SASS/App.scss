@@ -1,0 +1,15 @@
+@import "_normalize";
+@import "Varible";
+@import "Nav";
+@import "Dropdown";
+@import "Main";
+@import "Map";
+
+*{
+    // height:1080px;
+    box-sizing: border-box;
+}
+
+body{
+    height:100%;
+}

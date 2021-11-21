@@ -1,0 +1,91 @@
+
+.MainWrap{
+    background-color: #F0F9FC;
+    position:relative;
+    height: 100vh;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    z-index: 1;
+    padding: 0px 312px;
+    font-weight:700;
+    .grid{
+        position:relative;
+        width:1296px;
+        z-index:5;
+        p{
+            font-size:$headline1;
+            color:$nvaThemeColor;
+            margin:0px;
+        }
+        .searchWrap{
+            margin:40px 0px 0px 0px;
+            color:white;
+            .inputArea{
+                display: flex;
+                width:424px;
+                border: 1px solid $nvaThemeColor;
+                padding:8px 10px;
+                background-color: white;
+                align-items: center;
+                border-radius: 4px;
+                
+                .divider{
+                    width: 1px;
+                    height: 24px;
+                    background-color: #E5E5E5;
+                    margin: 0px 6px;
+                }
+                .inputKeyword{
+                    width:379px;
+                    outline: none;
+                    border:none;
+                }
+            }
+            .buttonArea{
+                width:424px;
+                margin:12px 0px;
+                display: flex;
+                justify-content: space-between;
+                .cityDropDown{
+                    width: 206px;
+                    height: 40px;
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color:$nvaThemeColor;
+                    border:1px solid $nvaThemeColor;
+                    background-color: white;
+                }
+                .serchButton{
+                    width: 206px;
+                    height: 40px;                    
+                    background-color: $nvaThemeColor;
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color:white;
+                    border:1px solid $nvaThemeColor;
+                    cursor: pointer;
+                    &:hover{
+                        background: #12749D;
+                    }
+                }
+            }
+        }
+    }
+    .backgroundLogo-1{
+        position:fixed;
+        top:-200px;
+        right:-200px;
+        z-index:3;
+
+    }
+    .backgroundLogo-2{
+        position:fixed;
+        bottom:-200px;
+        left:-200px;
+        z-index:3;
+    }
+}

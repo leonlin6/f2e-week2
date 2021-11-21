@@ -1,0 +1,39 @@
+.NavWrap{
+    font-family: $navFontFamily;
+    color:$nvaThemeColor;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 120px 0px 41px;
+    box-shadow: 0px 4px 10px rgba(38, 38, 38, 0.25);
+    font-size: $subTitle1-size;
+    z-index: 5;
+    .Logo{
+        padding: 18px 0px;
+        img{            
+            width:103px;
+            height:45px;
+        }
+    }
+    .NavButtonArea{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .btn{
+            padding:8px 16px;
+            &:hover{
+                background-color:#F0F9FC;
+            }
+
+            a{
+                text-decoration: none;
+                color:$nvaThemeColor;
+                font-weight:700;
+
+            }
+        }
+
+    }
+    
+
+}

@@ -1,0 +1,79 @@
+   
+.cityDropDown{
+    .dropdown{
+        width: 220px;
+        padding:7px 0px 7px 200px;
+        background-color: white ;       
+        border-radius: 6px;
+        position: relative;
+        padding-left:24px;
+        padding-right:12px;
+        display:flex;
+        justify-content: space-between;                            
+        cursor: pointer;
+        align-items: center;
+        .text{
+            margin-left: 45px;
+            
+        }
+        .dropIconClose{
+            position:absolute; 
+            display: inline;
+            right:10px;
+            border-width: 10px;
+            border: 5px solid;
+            border-color: transparent transparent transparent black;                                
+        }
+        .dropIconOpen{
+            position:absolute; 
+            display: inline;
+            right:10px;
+            border-width: 10px;
+            border: 5px solid;
+            border-color: black transparent transparent transparent;                                
+        }
+        .menu{
+            visibility:hidden;
+            cursor: pointer;
+            display: flex;                                
+            flex-direction: column;
+            position:absolute;
+            top:35px;
+            left:-1px;
+            background-color: white;     
+            border:1px solid $nvaThemeColor;   
+            overflow: scroll; 
+            scrollbar-width: thin;
+            overflow-x: hidden;
+            height:300px;
+            width:206px;
+
+            .dropItemLabel{
+                font-size: $Title;
+                background-color: white;  
+                display: flex;
+                padding-left:24px;
+                height:30px;
+                line-height: 30px;;
+                font-weight: 700;
+                z-index: 10;
+            }
+            .dropItem{
+                background-color: white;  
+                display: flex;
+                justify-content: center;
+                height:30px;
+                line-height: 30px;;
+                font-weight: 400;
+                z-index: 10;
+                &:hover{
+                    background-color: #F0F9FC;
+                }
+            }
+        }
+        .menu.visible{
+            visibility: visible;
+        }
+    }
+}
+
