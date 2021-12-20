@@ -2,7 +2,7 @@ import React from 'react';
 import '../SASS/App.css'
 import Main from './Main';
 import Nav from './Nav';
-import Map from './Map';
+import SearchBike from './SearchBike';
 
 import Route from './Route';
 
@@ -14,11 +14,11 @@ const App = () => {
                 <Main></Main>
             </Route>
             <Route path="/searchBike">
-                <Nav></Nav>
-                <Map></Map>
+                <Nav path="/searchBike"></Nav>
+                <SearchBike></SearchBike>
             </Route>
             <Route path="/searchRoute">
-                <Nav></Nav>
+                <Nav path="/searchRoute"></Nav>
                 <Main></Main>
             </Route>
         </div>

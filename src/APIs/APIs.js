@@ -1,7 +1,7 @@
 import axios from 'axios';
 import jsSHA from 'jssha';
 
-const getAuthorizationHeader = () => {
+export const getAuthorizationHeader = () => {
     let AppID = '9c833dc964c2452c8bfedc900230b889';
     let AppKey = '69Q4PBFhFAio3uYEJBOcuIi4jb4';
 
@@ -15,8 +15,8 @@ const getAuthorizationHeader = () => {
     return { 'Authorization': Authorization, 'X-Date': GMTString }; 
 }
 
-const scenicspotGet = axios.create({
-    baseURL: 'https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot',
+export const bikeSpotGet = axios.create({
+    baseURL: 'https://ptx.transportdata.tw/MOTC/v2/Bike/Station/',
     headers: getAuthorizationHeader(),
     params: {
         $top: 20,
@@ -26,6 +26,12 @@ const scenicspotGet = axios.create({
 });
 
 
+export const bikeAvailabilityGet = axios.create({
+    baseURL: 'https://ptx.transportdata.tw/MOTC/v2/Bike/Availability/',
+    headers: getAuthorizationHeader(),
+    params: {
+        $top: 20,
+        $format:'JSON'
+    }
 
-
-export const apiScenicspotGet = (city, term) => { return scenicspotGet.get(`/${city}?$filter=contains(Name,'${term}')`)};
+});

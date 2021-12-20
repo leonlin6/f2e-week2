@@ -1,0 +1,237 @@
+.map { 
+    max-width: 1920px;   
+    position: relative;
+    z-index: 1;
+    height:  calc(100vh - 81px);
+    .mapContainer{
+        max-width: 1920px;
+        height:  calc(100vh - 81px);
+        position: relative;
+        z-index: 2;   
+    }
+    .searchWrap{
+        width: 396px;
+        height: calc(100vh - 65px);
+        background-color: white;
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        padding: 24px 24px 16px 0px;
+        top:80px;       
+        z-index: 3;  
+        .searchArea{
+            width: 348px;
+            z-index: 4; 
+            background-color: white;
+            margin:0px 0px 5px 24px;
+            .searchAreaHead{
+                width: 348px;
+                height: 24px;
+                background: #0E5978;
+                border-radius: 8px 8px 0px 0px;
+            }
+            .searchAreaContent{
+                padding: 20px 16px;
+                box-shadow: 0px 0px 10px rgba(38, 38, 38, 0.25);
+                border-radius: 0px 0px 8px 8px;
+                .searchTitle{
+                    margin: 0px 8px 16px 0px;
+                    font-size: 32px;
+                    color:#0A4259;
+                }
+                .inputArea{
+                    display: flex;
+                    width:316px;
+                    border: 1px solid $nvaThemeColor;
+                    padding:8px 10px;
+                    background-color: white;
+                    align-items: center;
+                    border-radius: 4px;
+                    
+                    .divider{
+                        width: 1px;
+                        height: 24px;
+                        background-color: #E5E5E5;
+                        margin: 0px 6px;
+                    }
+                    .inputKeyword{
+                        width:379px;
+                        outline: none;
+                        border:none;
+                    }
+                }
+                .buttonArea{
+                    width:316px;
+                    margin:12px 0px 0px 0px;
+                    display: flex;
+                    justify-content: space-between;
+                    .cityDropDown{
+                        width: 152px;
+                        height: 40px;
+                        border-radius: 4px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color:$nvaThemeColor;
+                        border:1px solid $nvaThemeColor;
+                        background-color: white;    
+                        .dropdown{
+                            .text{
+                                margin-left: 16px;                        
+                            }
+                            .menu{
+                                width: 152px;
+                            }
+                        }
+                    }
+                    .serchButton{
+                        width: 152px;
+                        height: 40px;                    
+                        background-color: $nvaThemeColor;
+                        border-radius: 4px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color:white;
+                        border:1px solid $nvaThemeColor;
+                        cursor: pointer;
+                        &:hover{
+                            background: #12749D;
+                        }
+                    }
+                }
+            }
+        }
+        .searchResultArea{            
+            margin:0px 0px 5px 24px;
+            width: 348px;
+            height: 698px;
+            background-color: white; 
+            padding: 12px 0px 12px 0px;
+            overflow: scroll; 
+            overflow-x: hidden;
+
+            .searchResult{
+                width: 348px;
+                height: 134px;
+                background-color: #F6F6F6;
+                padding: 8px 16px 8px 16px;
+                margin-bottom:15px;
+                border-radius: 6px;
+                .resultTitle{
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 25px;
+                    margin-bottom:12px;
+                }
+                .locationWrap{
+                    display:flex;
+                    justify-content: start;
+                    margin-bottom:15px;
+                }
+                .statusArea{
+                    height:30px;
+                    .stationStatusClosed{
+                        padding:4px 8px 4px 8px;
+                        color:#7B7B7B;
+                        border: 1px solid #7B7B7B;
+                        background: #E5E5E5;
+                        border-radius: 4px;
+                        display: inline-block;
+                        margin-right: 15px;    
+                    }
+                    .stationStatusRunning{
+                        padding:4px 8px 4px 8px;
+                        color:#0A4259;
+                        border: 1px solid #0A4259;
+                        background: #F0F9FC;
+                        border-radius: 4px;
+                        display: inline-block;
+                        margin-right: 15px;    
+                    }
+                    .stationStatusSuspension{
+                        padding:4px 8px 4px 8px;
+                        color:#CC1010;
+                        border: 1px solid #CC1010;
+                        background: #F4DCDC;
+                        border-radius: 4px;
+                        display: inline-block;
+                        margin-right: 15px;    
+    
+                    }
+    
+                    .bikeAvailable{
+                        padding:4px 8px 4px 8px;
+                        color:#0A4259;
+                        border: 1px solid #0A4259;
+                        background: #F0F9FC;
+                        border-radius: 4px;
+                        display: inline-block;
+                    }
+                    .nobike{
+                        padding:4px 8px 4px 8px;
+                        color:#CC1010;
+                        background: #F4DCDC;
+                        border: 1px solid #CC1010;
+                        border-radius: 4px;
+                        display: inline-block;
+                    }
+                    .noParking{
+                        padding:4px 8px 4px 8px;
+                        color:#EB8F05;
+                        background: #F5E6D0;
+                        border: 1px solid #EB8F05;
+                        border-radius: 4px;
+                        display: inline-block;
+                    }
+                }
+            }
+
+        }
+        .pageChangeArea{
+            height: 56px;
+            width: 396px;
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 10px rgba(38, 38, 38, 0.25);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .pageArea{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 54px;
+                height: 40px;
+                background: #F6F6F6;
+                border: 1px solid #A5A5A5;
+                box-sizing: border-box;
+                border-radius: 4px;
+                font-weight: 700;
+                color:#A5A5A5;
+
+            }
+            .prevIcon {
+                margin-right:28px;
+                cursor: pointer;
+                i.icon{
+                    color:#E5E5E5;
+                    height: 16px;
+                }
+            }
+            .nextIcon{
+                margin-left:28px;
+                cursor: pointer;
+                i.icon{
+                    color:#E5E5E5;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+  }
+
+.leaflet-container{
+    height: 100%;
+    width: 100vw;
+}

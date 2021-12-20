@@ -393,6 +393,14 @@ template {
   font-weight: 700;
 }
 
+.NavWrap .NavButtonArea .btn.active {
+  background-color: #0E5978;
+}
+
+.NavWrap .NavButtonArea .btn.active a {
+  color: #F0F9FC;
+}
+
 .cityDropDown .dropdown {
   width: 220px;
   padding: 7px 0px 7px 200px;
@@ -614,12 +622,307 @@ template {
 }
 
 .map {
-  height: 1800px;
-  width: 500px;
+  max-width: 1920px;
+  position: relative;
+  z-index: 1;
+  height: calc(100vh - 81px);
+}
+
+.map .mapContainer {
+  max-width: 1920px;
+  height: calc(100vh - 81px);
+  position: relative;
+  z-index: 2;
+}
+
+.map .searchWrap {
+  width: 396px;
+  height: calc(100vh - 65px);
+  background-color: white;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 24px 24px 16px 0px;
+  top: 80px;
+  z-index: 3;
+}
+
+.map .searchWrap .searchArea {
+  width: 348px;
+  z-index: 4;
+  background-color: white;
+  margin: 0px 0px 5px 24px;
+}
+
+.map .searchWrap .searchArea .searchAreaHead {
+  width: 348px;
+  height: 24px;
+  background: #0E5978;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.map .searchWrap .searchArea .searchAreaContent {
+  padding: 20px 16px;
+  -webkit-box-shadow: 0px 0px 10px rgba(38, 38, 38, 0.25);
+          box-shadow: 0px 0px 10px rgba(38, 38, 38, 0.25);
+  border-radius: 0px 0px 8px 8px;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .searchTitle {
+  margin: 0px 8px 16px 0px;
+  font-size: 32px;
+  color: #0A4259;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .inputArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 316px;
+  border: 1px solid #0E5978;
+  padding: 8px 10px;
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 4px;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .inputArea .divider {
+  width: 1px;
+  height: 24px;
+  background-color: #E5E5E5;
+  margin: 0px 6px;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .inputArea .inputKeyword {
+  width: 379px;
+  outline: none;
+  border: none;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .buttonArea {
+  width: 316px;
+  margin: 12px 0px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .buttonArea .cityDropDown {
+  width: 152px;
+  height: 40px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #0E5978;
+  border: 1px solid #0E5978;
+  background-color: white;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .buttonArea .cityDropDown .dropdown .text {
+  margin-left: 16px;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .buttonArea .cityDropDown .dropdown .menu {
+  width: 152px;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .buttonArea .serchButton {
+  width: 152px;
+  height: 40px;
+  background-color: #0E5978;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  border: 1px solid #0E5978;
+  cursor: pointer;
+}
+
+.map .searchWrap .searchArea .searchAreaContent .buttonArea .serchButton:hover {
+  background: #12749D;
+}
+
+.map .searchWrap .searchResultArea {
+  margin: 0px 0px 5px 24px;
+  width: 348px;
+  height: 698px;
+  background-color: white;
+  padding: 12px 0px 12px 0px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.map .searchWrap .searchResultArea .searchResult {
+  width: 348px;
+  height: 134px;
+  background-color: #F6F6F6;
+  padding: 8px 16px 8px 16px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.map .searchWrap .searchResultArea .searchResult .resultTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 12px;
+}
+
+.map .searchWrap .searchResultArea .searchResult .locationWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin-bottom: 15px;
+}
+
+.map .searchWrap .searchResultArea .searchResult .statusArea {
+  height: 30px;
+}
+
+.map .searchWrap .searchResultArea .searchResult .statusArea .stationStatusClosed {
+  padding: 4px 8px 4px 8px;
+  color: #7B7B7B;
+  border: 1px solid #7B7B7B;
+  background: #E5E5E5;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.map .searchWrap .searchResultArea .searchResult .statusArea .stationStatusRunning {
+  padding: 4px 8px 4px 8px;
+  color: #0A4259;
+  border: 1px solid #0A4259;
+  background: #F0F9FC;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.map .searchWrap .searchResultArea .searchResult .statusArea .stationStatusSuspension {
+  padding: 4px 8px 4px 8px;
+  color: #CC1010;
+  border: 1px solid #CC1010;
+  background: #F4DCDC;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.map .searchWrap .searchResultArea .searchResult .statusArea .bikeAvailable {
+  padding: 4px 8px 4px 8px;
+  color: #0A4259;
+  border: 1px solid #0A4259;
+  background: #F0F9FC;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.map .searchWrap .searchResultArea .searchResult .statusArea .nobike {
+  padding: 4px 8px 4px 8px;
+  color: #CC1010;
+  background: #F4DCDC;
+  border: 1px solid #CC1010;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.map .searchWrap .searchResultArea .searchResult .statusArea .noParking {
+  padding: 4px 8px 4px 8px;
+  color: #EB8F05;
+  background: #F5E6D0;
+  border: 1px solid #EB8F05;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.map .searchWrap .pageChangeArea {
+  height: 56px;
+  width: 396px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 10px rgba(38, 38, 38, 0.25);
+          box-shadow: 0px 0px 10px rgba(38, 38, 38, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.map .searchWrap .pageChangeArea .pageArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 54px;
+  height: 40px;
+  background: #F6F6F6;
+  border: 1px solid #A5A5A5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #A5A5A5;
+}
+
+.map .searchWrap .pageChangeArea .prevIcon {
+  margin-right: 28px;
+  cursor: pointer;
+}
+
+.map .searchWrap .pageChangeArea .prevIcon i.icon {
+  color: #E5E5E5;
+  height: 16px;
+}
+
+.map .searchWrap .pageChangeArea .nextIcon {
+  margin-left: 28px;
+  cursor: pointer;
+}
+
+.map .searchWrap .pageChangeArea .nextIcon i.icon {
+  color: #E5E5E5;
+  height: 16px;
 }
 
 .leaflet-container {
-  height: 1800px;
+  height: 100%;
   width: 100vw;
 }
 

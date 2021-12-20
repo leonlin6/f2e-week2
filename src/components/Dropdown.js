@@ -26,14 +26,14 @@ const Dropdown = (props) =>{
     );
 
     const renderedOptions = props.cities.map((option, index) => { 
-
         // if(option === selected){
         //     return null;
         // }
 
         const renderCity = option.cities.map((item, ind) => {
+
             return(
-                <div key={'city' + ind} className="dropItem"  onClick={() => {props.selectCity(item)}}>
+                <div key={item} className="dropItem"  onClick={() => {props.selectCity(item)}}>
                     {item}
                 </div>
             );
@@ -41,7 +41,7 @@ const Dropdown = (props) =>{
 
         
         return(
-            <div>
+            <div key={`option`+index}>
                 <div key={option.area} className="dropItemLabel" >                
                     {option.area}
                 </div>
@@ -55,7 +55,6 @@ const Dropdown = (props) =>{
     }
     
     if(props.selectedCity !== null){
-        console.log('selectedCity', props.selectedCity);
         return(
             <span ref={ref} className="dropdown" onClick={onDropDown}>
                 <div className="text">{props.selectedCity}</div>
@@ -78,8 +77,10 @@ const Dropdown = (props) =>{
 
 
 const mapStateToProps = (state) => {
-    console.log('state', state);
-    return {cities:state.cities, selectedCity:state.selectedCity};
+    return {
+        cities:state.cities, 
+        selectedCity:state.selectedCity
+    };
 }
 
 export default connect(mapStateToProps, {selectCity})(Dropdown);
