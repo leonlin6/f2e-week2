@@ -395,9 +395,6 @@ template {
 
 .NavWrap .NavButtonArea .btn.active {
   background-color: #0E5978;
-}
-
-.NavWrap .NavButtonArea .btn.active a {
   color: #F0F9FC;
 }
 
@@ -503,7 +500,7 @@ template {
 .MainWrap {
   background-color: #F0F9FC;
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 45px);
   overflow-x: hidden;
   overflow-y: hidden;
   z-index: 1;
@@ -633,6 +630,194 @@ template {
   height: calc(100vh - 81px);
   position: relative;
   z-index: 2;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper {
+  width: 348px !important;
+  padding: 16px 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content {
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 257px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopLocation {
+  font-size: 16px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopLocation .icon {
+  height: 20px;
+  color: #0E5978;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopRenewTime {
+  font-size: 16px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopRenewTime .icon {
+  height: 20px;
+  color: #0E5978;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopConditionArea {
+  height: 30px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopConditionArea .workStatus {
+  font-size: 14px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopConditionArea .stationStatusClosed {
+  font-weight: 400;
+  padding: 4px 8px 4px 8px;
+  color: #7B7B7B;
+  border: 1px solid #7B7B7B;
+  background: #E5E5E5;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopConditionArea .stationStatusRunning {
+  padding: 4px 8px 4px 8px;
+  color: #0A4259;
+  border: 1px solid #0A4259;
+  background: #F0F9FC;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopConditionArea .stationStatusSuspension {
+  padding: 4px 8px 4px 8px;
+  color: #CC1010;
+  border: 1px solid #CC1010;
+  background: #F4DCDC;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopConditionArea .bikeAvailable {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 4px 8px 4px 8px;
+  color: #0A4259;
+  border: 1px solid #0A4259;
+  background: #F0F9FC;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopConditionArea .nobike {
+  padding: 4px 8px 4px 8px;
+  color: #CC1010;
+  background: #F4DCDC;
+  border: 1px solid #CC1010;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopConditionArea .noParking {
+  padding: 4px 8px 4px 8px;
+  color: #EB8F05;
+  background: #F5E6D0;
+  border: 1px solid #EB8F05;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopAvaiArea {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopAvaiArea .bikeAmount {
+  border: 1px solid #0E5978;
+  border-radius: 4px;
+  color: #0E5978;
+  width: 154.5px;
+  height: 75px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopAvaiArea .bikeAmount .title {
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopAvaiArea .bikeAmount .amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 28px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopAvaiArea .bikeStopRemain {
+  border: 1px solid #0E5978;
+  border-radius: 4px;
+  color: #0E5978;
+  width: 154.5px;
+  height: 75px;
+  font-size: 16px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopAvaiArea .bikeStopRemain .title {
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+.map .mapContainer .leaflet-popup-content-wrapper .leaflet-popup-content .mapPopAvaiArea .bikeStopRemain .amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 28px;
 }
 
 .map .searchWrap {
@@ -768,7 +953,7 @@ template {
 
 .map .searchWrap .searchResultArea {
   margin: 0px 0px 5px 24px;
-  width: 348px;
+  width: 360px;
   height: 698px;
   background-color: white;
   padding: 12px 0px 12px 0px;
@@ -777,15 +962,20 @@ template {
 }
 
 .map .searchWrap .searchResultArea .searchResult {
+  cursor: pointer;
   width: 348px;
-  height: 134px;
   background-color: #F6F6F6;
   padding: 8px 16px 8px 16px;
   margin-bottom: 15px;
   border-radius: 6px;
 }
 
+.map .searchWrap .searchResultArea .searchResult:hover {
+  background: #F1F1F1;
+}
+
 .map .searchWrap .searchResultArea .searchResult .resultTitle {
+  pointer-events: none;
   font-weight: 700;
   font-size: 20px;
   line-height: 25px;
@@ -793,6 +983,7 @@ template {
 }
 
 .map .searchWrap .searchResultArea .searchResult .locationWrap {
+  pointer-events: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -803,6 +994,7 @@ template {
 }
 
 .map .searchWrap .searchResultArea .searchResult .statusArea {
+  pointer-events: none;
   height: 30px;
 }
 
@@ -863,6 +1055,10 @@ template {
   display: inline-block;
 }
 
+.map .searchWrap .searchResultArea .searchResult.active {
+  background: #F0F9FC;
+}
+
 .map .searchWrap .pageChangeArea {
   height: 56px;
   width: 396px;
@@ -901,12 +1097,48 @@ template {
   color: #A5A5A5;
 }
 
+.map .searchWrap .pageChangeArea .pageArea input {
+  width: 12px;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #A5A5A5;
+  background: #F6F6F6;
+}
+
+.map .searchWrap .pageChangeArea .pageArea input:focus {
+  outline: none;
+  background: #F6F6F6;
+}
+
+.map .searchWrap .pageChangeArea .prevIcon.off {
+  margin-right: 28px;
+  cursor: pointer;
+}
+
+.map .searchWrap .pageChangeArea .prevIcon.off i.icon {
+  color: #E5E5E5;
+  height: 16px;
+}
+
 .map .searchWrap .pageChangeArea .prevIcon {
   margin-right: 28px;
   cursor: pointer;
 }
 
 .map .searchWrap .pageChangeArea .prevIcon i.icon {
+  color: #7B7B7B;
+  height: 16px;
+}
+
+.map .searchWrap .pageChangeArea .nextIcon.off {
+  margin-left: 28px;
+  cursor: pointer;
+}
+
+.map .searchWrap .pageChangeArea .nextIcon.off i.icon {
   color: #E5E5E5;
   height: 16px;
 }
@@ -917,7 +1149,7 @@ template {
 }
 
 .map .searchWrap .pageChangeArea .nextIcon i.icon {
-  color: #E5E5E5;
+  color: #7B7B7B;
   height: 16px;
 }
 

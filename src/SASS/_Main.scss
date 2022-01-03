@@ -2,7 +2,7 @@
 .MainWrap{
     background-color: #F0F9FC;
     position:relative;
-    height: 100vh;
+    height: calc(100vh - 45px);
     overflow-x:hidden;
     overflow-y:hidden;
     z-index: 1;

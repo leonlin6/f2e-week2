@@ -1,0 +1,60 @@
+@mixin stationStatusClosed{
+    padding:4px 8px 4px 8px;
+    color:#7B7B7B;
+    border: 1px solid #7B7B7B;
+    background: #E5E5E5;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 15px;    
+}
+
+@mixin stationStatusRunning{
+    padding:4px 8px 4px 8px;
+    color:#0A4259;
+    border: 1px solid #0A4259;
+    background: #F0F9FC;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 15px;    
+}
+
+@mixin stationStatusSuspension{
+    padding:4px 8px 4px 8px;
+    color:#CC1010;
+    border: 1px solid #CC1010;
+    background: #F4DCDC;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 15px;    
+}
+
+@mixin bikeAvailable{
+    padding:4px 8px 4px 8px;
+    color:#0A4259;
+    border: 1px solid #0A4259;
+    background: #F0F9FC;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+
+@mixin nobike {
+    padding:4px 8px 4px 8px;
+    color:#CC1010;
+    background: #F4DCDC;
+    border: 1px solid #CC1010;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+@mixin noParking{
+    padding:4px 8px 4px 8px;
+    color:#EB8F05;
+    background: #F5E6D0;
+    border: 1px solid #EB8F05;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+
+

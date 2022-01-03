@@ -29,6 +29,12 @@ const selectedCityReducer = (selectedCity = '縣市', action) => {
     return selectedCity;
 };
 
+const currentPageReducer = (currentPage = 0, action) => {
+    if(action.type === 'PAGE_SET'){
+        return action.payload;
+    }
+    return currentPage;
+};
 
 const bikeSpotInfoReducer = (data=[], action) => {
     if(action.type ===  'GET_BIKE_SPOT'){
@@ -53,5 +59,6 @@ export default combineReducers({
     cities: citiesReducer,
     selectedCity: selectedCityReducer,
     bikeSpotData:bikeSpotInfoReducer,
-    bikeAvailabilityData: bikeAvailabilityReducer
+    bikeAvailabilityData: bikeAvailabilityReducer,
+    currentPage:currentPageReducer
 });

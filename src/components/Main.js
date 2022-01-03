@@ -2,9 +2,30 @@
 import Dropdown from './Dropdown';
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
+import Link from './Link';
+import {getBikeSpotInfo, getBikeAvailability, setCurrentPage} from '../actions';
+import CityTranslate from './CityTranslate';
 
-const Main = () => {
-       
+
+const Main = (props) => {
+    let term = '';
+
+    const onSearchChange = (event) => {
+        term = event.target.value;
+    }
+
+    const onSearchClick = () => {
+
+        if(props.selectedCity !== '縣市'){
+            props.getBikeSpotInfo(CityTranslate[props.selectedCity], term);
+            props.setCurrentPage(1);
+
+            window.history.pushState({},'','/searchBike');
+            const navEvent = new PopStateEvent('popstate');
+            window.dispatchEvent(navEvent);
+        }
+        
+    }
 
     return (
         <div className="MainWrap">
@@ -22,13 +43,15 @@ const Main = () => {
                             <div className="inputArea">
                                 <img alt="search logo" src={require('../images/SearchImage.png').default}></img>
                                 <div className="divider"> </div>
-                                <input className="inputKeyword" placeholder="輸入關鍵字"></input>
+                                <input className="inputKeyword" placeholder="輸入關鍵字" onChange={onSearchChange}></input>
                             </div>
                             <div className="buttonArea">
                                 <div className="cityDropDown">                                
                                     <Dropdown></Dropdown>
                                 </div>
-                                <div className="serchButton">搜尋</div>
+                                {/* <Link click={onSearchClick} href="/searchBike"> */}
+                                    <div onClick={onSearchClick} className="serchButton">搜尋</div>
+                                {/* </Link> */}
                             </div>                        
                         </div>
                     </div>
@@ -54,9 +77,13 @@ const Main = () => {
     );
 }
 
-
-const mapStateToProps = (state) => {
-    return {cities:state.cities, selectedCity:state.selectedCity};
+const mapStateToProps = (state) => {  
+    return {
+        bikeSpotData: state.bikeSpotData,
+        bikeAvailabilityData: state.bikeAvailabilityData,
+        selectedCity:state.selectedCity,
+        cities:state.cities
+    };
 }
 
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps, {getBikeSpotInfo, getBikeAvailability, setCurrentPage})(Main);

@@ -9,10 +9,18 @@ export const selectCity = (city) => {
     });
 }
 
+export const setCurrentPage = (page) => {
+    //Return an action
+    return({
+        type: 'PAGE_SET',
+        payload:page
+    });
+}
+
 
 // Action Creator
 export const getBikeSpotInfo = (city , term) => async dispatch => {
-    const response = await bikeSpotGet.get(`/${city}?$filter=contains(StationName/Zh_tw ,'${term}')`, {headers:getAuthorizationHeader()});
+    const response = await bikeSpotGet.get(`/${city}?$filter=contains(StationName/Zh_tw,'${term}')`, {headers:getAuthorizationHeader()});
     
     dispatch({type: 'GET_BIKE_SPOT', payload: response.data})       
 
@@ -20,7 +28,7 @@ export const getBikeSpotInfo = (city , term) => async dispatch => {
 
 
 export const getBikeAvailability = (city , UID, index) => async dispatch => {
-    const response = await bikeAvailabilityGet.get(`/${city}?$filter=contains(StationUID ,'${UID}')`, {headers:getAuthorizationHeader()});
+    const response = await bikeAvailabilityGet.get(`/${city}?$filter=contains(StationUID,'${UID}')`, {headers:getAuthorizationHeader()});
     
     dispatch({type: 'GET_BIKE_AVAILABILITY', payload: response.data, index})       
 
