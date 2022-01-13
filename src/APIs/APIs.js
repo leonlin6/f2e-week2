@@ -35,3 +35,12 @@ export const bikeAvailabilityGet = axios.create({
     }
 
 });
+
+export const bikeRoutetGet = axios.create({
+    baseURL: 'https://ptx.transportdata.tw/MOTC/v2/Cycling/Shape/',
+    headers: getAuthorizationHeader(),
+    params: {
+        $format:'JSON'
+    }
+
+});

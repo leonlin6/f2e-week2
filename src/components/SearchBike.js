@@ -25,7 +25,8 @@ const SearchBike = (props) => {
             renewTime:'',
             stationStatus:'',
             availableReturn:0,
-            availalbeBike:0
+            availalbeBike:0,
+            updatetime:''
     });
     
     const resultRef = useRef(null);
@@ -58,7 +59,7 @@ const SearchBike = (props) => {
                 </div>
                 <div className='mapPopRenewTime'>
                     <i className="history icon"></i>
-                    {selectedCard.renewTime}
+                    {selectedCard.updatetime}
                 </div>
                 <div className='mapPopConditionArea'>
                     {/* <div className='stationStatusClosed'>營運狀態</div>
@@ -121,7 +122,8 @@ const SearchBike = (props) => {
                         ...searchData[props.bikeAvailabilityData.index],
                         bikeAvailable:props.bikeAvailabilityData.data[0].AvailableRentBikes,
                         stationStatus:props.bikeAvailabilityData.data[0].ServiceStatus,
-                        availableReturnBikes:props.bikeAvailabilityData.data[0].AvailableReturnBikes
+                        availableReturnBikes:props.bikeAvailabilityData.data[0].AvailableReturnBikes,
+                        updatetime:props.bikeAvailabilityData.data[0].UpdateTime
                         }            
                     ]
                 );
@@ -132,7 +134,9 @@ const SearchBike = (props) => {
                         ...searchData[props.bikeAvailabilityData.index],
                         bikeAvailable:props.bikeAvailabilityData.data[0].AvailableRentBikes,
                         stationStatus:props.bikeAvailabilityData.data[0].ServiceStatus,
-                        availableReturnBikes:props.bikeAvailabilityData.data[0].AvailableReturnBikes
+                        availableReturnBikes:props.bikeAvailabilityData.data[0].AvailableReturnBikes,
+                        updatetime:props.bikeAvailabilityData.data[0].UpdateTime
+
                         }            
                     ]
                 );
@@ -250,7 +254,7 @@ const SearchBike = (props) => {
             {
                 title:selectedResult.title,
                 location:selectedResult.location,
-                renewTime:'2021-11-13 16:39:07',
+                updatetime:selectedResult.updatetime,
                 stationStatus:selectedResult.stationStatus,
                 availableReturn:selectedResult.bikeAvailable,
                 availalbeBike:selectedResult.availableReturnBikes,
@@ -327,7 +331,7 @@ const SearchBike = (props) => {
                 <div className='searchArea'>
                     <div className='searchAreaHead'></div>
                     <div className="searchAreaContent">
-                        <div className="searchTitle">尋找車道
+                        <div className="searchTitle">尋找單車
                             <i className="angle down icon"></i>
                         </div>
                         <div className="inputArea">

@@ -1,4 +1,4 @@
-import {bikeSpotGet, getAuthorizationHeader, bikeAvailabilityGet} from '../APIs/APIs'
+import {bikeSpotGet, getAuthorizationHeader, bikeAvailabilityGet, bikeRoutetGet} from '../APIs/APIs'
 // Action Creator
 
 export const selectCity = (city) => {
@@ -34,3 +34,9 @@ export const getBikeAvailability = (city , UID, index) => async dispatch => {
 
 }
 
+export const getBikeRoute = (city, term) => async dispatch => {
+    const response = await bikeRoutetGet.get(`/${city}?$filter=contains(RouteName,'${term}')`, {headers:getAuthorizationHeader()});
+    
+    dispatch({type: 'GET_BIKE_ROUTE', payload: response.data})       
+
+}

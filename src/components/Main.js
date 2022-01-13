@@ -14,6 +14,7 @@ const Main = (props) => {
         term = event.target.value;
     }
 
+
     const onSearchClick = () => {
 
         if(props.selectedCity !== '縣市'){
@@ -49,9 +50,7 @@ const Main = (props) => {
                                 <div className="cityDropDown">                                
                                     <Dropdown></Dropdown>
                                 </div>
-                                {/* <Link click={onSearchClick} href="/searchBike"> */}
-                                    <div onClick={onSearchClick} className="serchButton">搜尋</div>
-                                {/* </Link> */}
+                                <div onClick={onSearchClick} className="serchButton">搜尋</div>                                
                             </div>                        
                         </div>
                     </div>

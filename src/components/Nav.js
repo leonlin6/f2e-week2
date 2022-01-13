@@ -9,9 +9,6 @@ const Nav = (props) => {
             <div className="NavButtonArea">
                 <Link className={`${props.path === '/searchBike' ? "btn active" : "btn"}`} href={`/searchBike`} children={`尋找單車`}></Link>
                 <Link className={`${props.path === '/searchRoute' ? "btn active" : "btn"}`} href={`/searchRoute`} children={`尋找車道`}></Link>
-                
-                {/* <div className={props.path === '/searchBike' ? "btn active" : "btn"}><a href="/searchBike">尋找單車</a></div>
-                <div className={props.path === '/searchRoute' ? "btn active" : "btn"}><a href="/searchRoute">尋找車道</a></div> */}
             </div>      
 
         </div>

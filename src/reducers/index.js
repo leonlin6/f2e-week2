@@ -55,10 +55,21 @@ const bikeAvailabilityReducer = (dd={data:[],index:0}, action) => {
     return dd;    
 }
 
+const bikeRouteReducer = (data=[], action) => {
+    if(action.type ===  'GET_BIKE_ROUTE'){
+        return {
+            data:action.payload
+        };
+    }
+
+    return data;    
+}
+
 export default combineReducers({
     cities: citiesReducer,
     selectedCity: selectedCityReducer,
     bikeSpotData:bikeSpotInfoReducer,
     bikeAvailabilityData: bikeAvailabilityReducer,
-    currentPage:currentPageReducer
+    currentPage:currentPageReducer,
+    bikeRouteData:bikeRouteReducer
 });

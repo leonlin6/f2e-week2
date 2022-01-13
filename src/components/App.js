@@ -3,6 +3,7 @@ import '../SASS/App.css'
 import Main from './Main';
 import Nav from './Nav';
 import SearchBike from './SearchBike';
+import SearchRoute from './SearchRoute';
 
 import Route from './Route';
 
@@ -19,7 +20,7 @@ const App = () => {
             </Route>
             <Route path="/searchRoute">
                 <Nav path="/searchRoute"></Nav>
-                <Main></Main>
+                <SearchRoute></SearchRoute>
             </Route>
         </div>
     );
